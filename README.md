@@ -109,7 +109,7 @@ To fetch documents from your repository, you need to fetch the Api data first.
 ```javascript
 var Prismic = require('prismic-javascript');
 
-Prismic.api("http://your_repository_name.prismic.io/api", function(error, api) {
+Prismic.api("http://your_repository_name.prismic.io/api/v22", function(error, api) {
   var options = {}; // In Node.js, pass the request as 'req' to read the reference from the cookies
   api.query("", options, function(err, response) { // An empty query will return all the documents
     if (err) {
@@ -125,7 +125,7 @@ All asynchronous calls return ES2015 promises, so alternatively you can use them
 ```javascript
 var Prismic = require('prismic-javascript');
 
-Prismic.api("https://your-repository-name.prismic.io/api").then(function(api) {
+Prismic.api("https://your-repository-name.prismic.io/api/v2").then(function(api) {
   return api.query(""); // An empty query will return all the documents
 }).then(function(response) {
   console.log("Documents: ", response.results);
